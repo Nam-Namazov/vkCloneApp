@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C93F6D257774307896A1945 /* Pods_VkClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB644C162244515A3C3C631 /* Pods_VkClone.framework */; };
 		993C9F4428BA679500C06DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F4328BA679500C06DBE /* AppDelegate.swift */; };
 		993C9F4628BA679500C06DBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F4528BA679500C06DBE /* SceneDelegate.swift */; };
 		993C9F4D28BA679500C06DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993C9F4C28BA679500C06DBE /* Assets.xcassets */; };
@@ -19,9 +20,13 @@
 		993C9F7E28BA6BC500C06DBE /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F7D28BA6BC500C06DBE /* NotificationsViewController.swift */; };
 		993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F8028BA6D9E00C06DBE /* UIColor + ext.swift */; };
 		993C9F8728BA6E7100C06DBE /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F8628BA6E7100C06DBE /* AuthenticationViewController.swift */; };
+		99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D128BA77B600057D94 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CB644C162244515A3C3C631 /* Pods_VkClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		420030BB07A621FAC47CA22C /* Pods-VkClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkClone.release.xcconfig"; path = "Target Support Files/Pods-VkClone/Pods-VkClone.release.xcconfig"; sourceTree = "<group>"; };
+		6B0B9F5B2508CB2AE0853C5F /* Pods-VkClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkClone.debug.xcconfig"; path = "Target Support Files/Pods-VkClone/Pods-VkClone.debug.xcconfig"; sourceTree = "<group>"; };
 		993C9F4028BA679500C06DBE /* VkClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		993C9F4328BA679500C06DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		993C9F4528BA679500C06DBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,7 @@
 		993C9F7D28BA6BC500C06DBE /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		993C9F8028BA6D9E00C06DBE /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		993C9F8628BA6E7100C06DBE /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		99FBE2D128BA77B600057D94 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C93F6D257774307896A1945 /* Pods_VkClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70778F3DEBC0647D3D2BF2BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CB644C162244515A3C3C631 /* Pods_VkClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		993C9F3728BA679500C06DBE = {
 			isa = PBXGroup;
 			children = (
 				993C9F4228BA679500C06DBE /* VkClone */,
 				993C9F4128BA679500C06DBE /* Products */,
+				CB2BD0CCE1E0FD296E4C013E /* Pods */,
+				70778F3DEBC0647D3D2BF2BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +118,8 @@
 				993C9F5D28BA689200C06DBE /* MainTabBarController */,
 				993C9F8228BA6DE200C06DBE /* Authentication */,
 				993C9F5E28BA68AE00C06DBE /* Feed */,
-				993C9F5F28BA68B300C06DBE /* Messenger */,
 				993C9F6128BA693E00C06DBE /* Videos */,
+				993C9F5F28BA68B300C06DBE /* Messenger */,
 				993C9F7928BA6B9900C06DBE /* Notifications */,
 				993C9F6028BA692B00C06DBE /* Friends */,
 				993C9F7F28BA6D8300C06DBE /* Extensions */,
@@ -113,6 +130,7 @@
 		993C9F5C28BA688F00C06DBE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				99FBE2D128BA77B600057D94 /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -325,6 +343,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CB2BD0CCE1E0FD296E4C013E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B0B9F5B2508CB2AE0853C5F /* Pods-VkClone.debug.xcconfig */,
+				420030BB07A621FAC47CA22C /* Pods-VkClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,9 +359,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 993C9F5428BA679500C06DBE /* Build configuration list for PBXNativeTarget "VkClone" */;
 			buildPhases = (
+				B7DF70F88D750DB3DF4A95FA /* [CP] Check Pods Manifest.lock */,
 				993C9F3C28BA679500C06DBE /* Sources */,
 				993C9F3D28BA679500C06DBE /* Frameworks */,
 				993C9F3E28BA679500C06DBE /* Resources */,
+				43F02F29631620ADA835332A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,6 +419,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		43F02F29631620ADA835332A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VkClone/Pods-VkClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VkClone/Pods-VkClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VkClone/Pods-VkClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7DF70F88D750DB3DF4A95FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VkClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		993C9F3C28BA679500C06DBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -400,6 +471,7 @@
 				993C9F8728BA6E7100C06DBE /* AuthenticationViewController.swift in Sources */,
 				993C9F4428BA679500C06DBE /* AppDelegate.swift in Sources */,
 				993C9F4628BA679500C06DBE /* SceneDelegate.swift in Sources */,
+				99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */,
 				993C9F7828BA6A2E00C06DBE /* FriendsViewController.swift in Sources */,
 				993C9F7228BA6A0100C06DBE /* FeedViewController.swift in Sources */,
 				993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */,
@@ -538,6 +610,7 @@
 		};
 		993C9F5528BA679500C06DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0B9F5B2508CB2AE0853C5F /* Pods-VkClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -565,6 +638,7 @@
 		};
 		993C9F5628BA679500C06DBE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 420030BB07A621FAC47CA22C /* Pods-VkClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

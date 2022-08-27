@@ -31,13 +31,13 @@ final class TabBarController: UITabBarController {
             viewController: FeedViewController(),
             itemImage: "newspaper")
         
-        let messengerViewController = createNavController(
-            viewController: MessengerViewController(),
-            itemImage: "message")
-        
         let videosViewController = createNavController(
             viewController: VideosViewController(),
             itemImage: "video")
+        
+        let messengerViewController = createNavController(
+            viewController: MessengerViewController(),
+            itemImage: "message")
         
         let friendsViewController = createNavController(
             viewController: FriendsViewController(),
@@ -48,8 +48,8 @@ final class TabBarController: UITabBarController {
             itemImage: "bell")
         
         viewControllers = [feedViewController,
-                           messengerViewController,
                            videosViewController,
+                           messengerViewController,
                            notificationsViewController,
                            friendsViewController]
     }
