@@ -21,6 +21,8 @@
 		993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F8028BA6D9E00C06DBE /* UIColor + ext.swift */; };
 		993C9F8728BA6E7100C06DBE /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F8628BA6E7100C06DBE /* AuthenticationViewController.swift */; };
 		99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D128BA77B600057D94 /* AuthService.swift */; };
+		99FBE2D428BA9C9D00057D94 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D328BA9C9D00057D94 /* NetworkService.swift */; };
+		99FBE2D628BA9D7400057D94 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D528BA9D7400057D94 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		993C9F8028BA6D9E00C06DBE /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		993C9F8628BA6E7100C06DBE /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		99FBE2D128BA77B600057D94 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		99FBE2D328BA9C9D00057D94 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		99FBE2D528BA9D7400057D94 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +118,7 @@
 		993C9F5928BA687800C06DBE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				993C9F5C28BA688F00C06DBE /* Service */,
+				993C9F5C28BA688F00C06DBE /* Services */,
 				993C9F5D28BA689200C06DBE /* MainTabBarController */,
 				993C9F8228BA6DE200C06DBE /* Authentication */,
 				993C9F5E28BA68AE00C06DBE /* Feed */,
@@ -127,12 +131,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		993C9F5C28BA688F00C06DBE /* Service */ = {
+		993C9F5C28BA688F00C06DBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				99FBE2D128BA77B600057D94 /* AuthService.swift */,
+				99FBE2D328BA9C9D00057D94 /* NetworkService.swift */,
+				99FBE2D528BA9D7400057D94 /* API.swift */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		993C9F5D28BA689200C06DBE /* MainTabBarController */ = {
@@ -474,8 +480,10 @@
 				99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */,
 				993C9F7828BA6A2E00C06DBE /* FriendsViewController.swift in Sources */,
 				993C9F7228BA6A0100C06DBE /* FeedViewController.swift in Sources */,
+				99FBE2D628BA9D7400057D94 /* API.swift in Sources */,
 				993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */,
 				993C9F7428BA6A1F00C06DBE /* MessengerViewController.swift in Sources */,
+				99FBE2D428BA9C9D00057D94 /* NetworkService.swift in Sources */,
 				993C9F7E28BA6BC500C06DBE /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
