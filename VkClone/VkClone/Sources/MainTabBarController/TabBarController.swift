@@ -28,7 +28,7 @@ final class TabBarController: UITabBarController {
     
     private func configureTabBarControllers() {
         let feedViewController = createNavController(
-            viewController: FeedViewController(),
+            viewController: NewsFeedViewController(),
             itemImage: "newspaper")
         
         let videosViewController = createNavController(
