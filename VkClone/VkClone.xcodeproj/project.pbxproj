@@ -23,6 +23,8 @@
 		99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D128BA77B600057D94 /* AuthService.swift */; };
 		99FBE2D428BA9C9D00057D94 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D328BA9C9D00057D94 /* NetworkService.swift */; };
 		99FBE2D628BA9D7400057D94 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D528BA9D7400057D94 /* API.swift */; };
+		99FBE2D828BAB1C000057D94 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D728BAB1C000057D94 /* FeedResponse.swift */; };
+		99FBE2DA28BAB3EE00057D94 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D928BAB3EE00057D94 /* NetworkDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		99FBE2D128BA77B600057D94 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		99FBE2D328BA9C9D00057D94 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		99FBE2D528BA9D7400057D94 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		99FBE2D728BAB1C000057D94 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		99FBE2D928BAB3EE00057D94 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				99FBE2D128BA77B600057D94 /* AuthService.swift */,
 				99FBE2D328BA9C9D00057D94 /* NetworkService.swift */,
 				99FBE2D528BA9D7400057D94 /* API.swift */,
+				99FBE2D928BAB3EE00057D94 /* NetworkDataFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 		993C9F7028BA69F100C06DBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99FBE2D728BAB1C000057D94 /* FeedResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,6 +486,8 @@
 				99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */,
 				993C9F7828BA6A2E00C06DBE /* FriendsViewController.swift in Sources */,
 				993C9F7228BA6A0100C06DBE /* FeedViewController.swift in Sources */,
+				99FBE2D828BAB1C000057D94 /* FeedResponse.swift in Sources */,
+				99FBE2DA28BAB3EE00057D94 /* NetworkDataFetcher.swift in Sources */,
 				99FBE2D628BA9D7400057D94 /* API.swift in Sources */,
 				993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */,
 				993C9F7428BA6A1F00C06DBE /* MessengerViewController.swift in Sources */,
