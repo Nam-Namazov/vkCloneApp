@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        return true
+    }
+    
+    //iOS 9 workflow
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey: Any] = [:]
+    ) -> Bool {
+        VKSdk.processOpen(
+            url,
+            fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
         return true
     }
     
