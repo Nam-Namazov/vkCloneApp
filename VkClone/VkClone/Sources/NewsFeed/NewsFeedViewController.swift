@@ -58,7 +58,12 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     private func configreTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        tableView.register(UITableViewCell.self,
+//                           forCellReuseIdentifier: "cell")
+        tableView.register(
+            UINib(nibName: "NewsFeedTableViewCell",
+                  bundle: nil),
+            forCellReuseIdentifier: NewsFeedTableViewCell.identifier)
     }
     
     private func style() {
@@ -88,9 +93,9 @@ extension NewsFeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
-        
-        cell.textLabel?.text = "index is \(indexPath.row)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedTableViewCell.identifier, for: indexPath) as? NewsFeedTableViewCell else {
+            return UITableViewCell()
+        }
         
         return cell
     }
@@ -101,5 +106,8 @@ extension NewsFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         interactor?.makeRequest(request: .getFeed)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 212
     }
 }
