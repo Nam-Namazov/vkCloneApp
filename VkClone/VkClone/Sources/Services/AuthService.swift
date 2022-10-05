@@ -15,7 +15,6 @@ protocol AuthServiceDelegate: AnyObject {
 }
 
 final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
-
     let appId = "51411708"
     let vkSDK: VKSdk
     
