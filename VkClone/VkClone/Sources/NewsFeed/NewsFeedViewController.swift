@@ -17,19 +17,20 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     var interactor: NewsFeedBusinessLogic?
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
     private let tableView = UITableView(frame: .zero, style: .plain)
+    private var feedViewModel = FeedViewModel.init(cells: [])
     
     // MARK: Setup
     
     private func setup() {
-        let viewController        = self
-        let interactor            = NewsFeedInteractor()
-        let presenter             = NewsFeedPresenter()
-        let router                = NewsFeedRouter()
+        let viewController = self
+        let interactor = NewsFeedInteractor()
+        let presenter = NewsFeedPresenter()
+        let router = NewsFeedRouter()
         viewController.interactor = interactor
-        viewController.router     = router
-        interactor.presenter      = presenter
-        presenter.viewController  = viewController
-        router.viewController     = viewController
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
     }
     
     // MARK: Routing
@@ -44,14 +45,14 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
         layout()
         style()
         configreTableView()
+        interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getNewsFeed)
     }
     
     func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
         switch viewModel {
-        case .some:
-            print(" .some ViewController")
-        case .displayNewsFeed:
-            print(" .displayNewsFeed ViewController")
+        case .displayNewsFeed(feedViewModel: let feedViewModel):
+            self.feedViewModel = feedViewModel
+            tableView.reloadData()
         }
     }
     
@@ -89,14 +90,15 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 // MARK: - UITableViewDataSource
 extension NewsFeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return feedViewModel.cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedTableViewCell.identifier, for: indexPath) as? NewsFeedTableViewCell else {
             return UITableViewCell()
         }
-        
+        let cellViewModel = feedViewModel.cells[indexPath.row]
+        cell.set(viewModel: cellViewModel)
         return cell
     }
 }
@@ -105,8 +107,8 @@ extension NewsFeedViewController: UITableViewDataSource {
 extension NewsFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        interactor?.makeRequest(request: .getFeed)
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 212
     }
