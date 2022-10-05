@@ -16,11 +16,13 @@ enum NewsFeed {
                 case getNewsFeed
             }
         }
+        
         struct Response {
             enum ResponseType {
                 case presentNewsFeed(feed: FeedResponse)
             }
         }
+        
         struct ViewModel {
             enum ViewModelData {
                 case displayNewsFeed(feedViewModel: FeedViewModel)
@@ -30,6 +32,7 @@ enum NewsFeed {
 }
 
 struct FeedViewModel {
+    
     struct Cell: FeedCellViewModel {
         var iconUrlString: String
         var name: String
@@ -39,6 +42,14 @@ struct FeedViewModel {
         var comments: String?
         var shares: String?
         var views: String?
+        var photoAttachment: FeedCellPhotoAttachementViewModel?
+        var sizes: FeedCellSizes
+    }
+    
+    struct FeedCellPhotoAttachment: FeedCellPhotoAttachementViewModel {
+        var photoUrlString: String?
+        var width: Int
+        var height: Int
     }
     let cells: [Cell]
 }

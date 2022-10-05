@@ -12,7 +12,7 @@ protocol NewsFeedBusinessLogic {
     func makeRequest(request: NewsFeed.Model.Request.RequestType)
 }
 
-class NewsFeedInteractor: NewsFeedBusinessLogic {
+final class NewsFeedInteractor: NewsFeedBusinessLogic {
     
     var presenter: NewsFeedPresentationLogic?
     var service: NewsFeedService?
