@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C93F6D257774307896A1945 /* Pods_VkClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB644C162244515A3C3C631 /* Pods_VkClone.framework */; };
+		991EDA0728ED7FC300B2A903 /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991EDA0628ED7FC300B2A903 /* WebImageView.swift */; };
 		993C9F4428BA679500C06DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F4328BA679500C06DBE /* AppDelegate.swift */; };
 		993C9F4628BA679500C06DBE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F4528BA679500C06DBE /* SceneDelegate.swift */; };
 		993C9F4D28BA679500C06DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993C9F4C28BA679500C06DBE /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		2CB644C162244515A3C3C631 /* Pods_VkClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		420030BB07A621FAC47CA22C /* Pods-VkClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkClone.release.xcconfig"; path = "Target Support Files/Pods-VkClone/Pods-VkClone.release.xcconfig"; sourceTree = "<group>"; };
 		6B0B9F5B2508CB2AE0853C5F /* Pods-VkClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkClone.debug.xcconfig"; path = "Target Support Files/Pods-VkClone/Pods-VkClone.debug.xcconfig"; sourceTree = "<group>"; };
+		991EDA0628ED7FC300B2A903 /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
 		993C9F4028BA679500C06DBE /* VkClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		993C9F4328BA679500C06DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		993C9F4528BA679500C06DBE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		991EDA0528ED7FBC00B2A903 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				991EDA0628ED7FC300B2A903 /* WebImageView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		993C9F3728BA679500C06DBE = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 				993C9F8228BA6DE200C06DBE /* Authentication */,
 				993C9F5C28BA688F00C06DBE /* Services */,
 				99FBE2DB28BABBB100057D94 /* NewsFeed */,
+				991EDA0528ED7FBC00B2A903 /* Helpers */,
 				993C9F5D28BA689200C06DBE /* MainTabBarController */,
 				993C9F7F28BA6D8300C06DBE /* Extensions */,
 			);
@@ -529,6 +540,7 @@
 				99FBE2E328BABBD500057D94 /* NewsFeedPresenter.swift in Sources */,
 				993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */,
 				993C9F7428BA6A1F00C06DBE /* MessengerViewController.swift in Sources */,
+				991EDA0728ED7FC300B2A903 /* WebImageView.swift in Sources */,
 				99FBE2D428BA9C9D00057D94 /* NetworkService.swift in Sources */,
 				993C9F7E28BA6BC500C06DBE /* NotificationsViewController.swift in Sources */,
 				99FBE2E828BABBD500057D94 /* NewsFeedInteractor.swift in Sources */,
