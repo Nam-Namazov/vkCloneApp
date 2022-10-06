@@ -60,13 +60,14 @@ final class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     private func configreTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.register(UITableViewCell.self,
-//                           forCellReuseIdentifier: "cell")
+//        tableView.register(
+//            UINib(nibName: "NewsFeedTableViewCell",
+//                  bundle: nil),
+//            forCellReuseIdentifier: NewsFeedTableViewCell.identifier)
         tableView.register(
-            UINib(nibName: "NewsFeedTableViewCell",
-                  bundle: nil),
-            forCellReuseIdentifier: NewsFeedTableViewCell.identifier)
-        
+            NewsFeedCodeTableViewCell.self,
+            forCellReuseIdentifier: NewsFeedCodeTableViewCell.identifier
+        )
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         view.backgroundColor = .white
@@ -101,9 +102,15 @@ extension NewsFeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(
+//            withIdentifier: NewsFeedTableViewCell.identifier,
+//            for: indexPath) as? NewsFeedTableViewCell else {
+//            return UITableViewCell()
+//        }
+        
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: NewsFeedTableViewCell.identifier,
-            for: indexPath) as? NewsFeedTableViewCell else {
+            withIdentifier: NewsFeedCodeTableViewCell.identifier,
+            for: indexPath) as? NewsFeedCodeTableViewCell else {
             return UITableViewCell()
         }
         let cellViewModel = feedViewModel.cells[indexPath.row]
