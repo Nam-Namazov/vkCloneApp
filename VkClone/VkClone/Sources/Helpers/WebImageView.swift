@@ -11,7 +11,7 @@ final class WebImageView: UIImageView {
     func set(imageURL: String?) {
         guard let imageURL = imageURL,
               let url = URL(string: imageURL) else {
-            self.image = nil 
+            self.image = nil
             return
         }
         

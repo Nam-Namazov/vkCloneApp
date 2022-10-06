@@ -12,14 +12,16 @@ protocol NewsFeedDisplayLogic: AnyObject {
     func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData)
 }
 
-final class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
+final class NewsFeedViewController: UIViewController,
+                                    NewsFeedDisplayLogic,
+                                    NewsFeedTableViewCellDelegate {
+    
     var interactor: NewsFeedBusinessLogic?
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
-    private let tableView = UITableView(frame: .zero, style: .plain)
+    private let tableView = UITableView()
     private var feedViewModel = FeedViewModel.init(cells: [])
     
     // MARK: Setup
-    
     private func setup() {
         let viewController = self
         let interactor = NewsFeedInteractor()
@@ -37,7 +39,6 @@ final class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     
     
     // MARK: View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -60,16 +61,12 @@ final class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     private func configreTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-//        tableView.register(
-//            UINib(nibName: "NewsFeedTableViewCell",
-//                  bundle: nil),
-//            forCellReuseIdentifier: NewsFeedTableViewCell.identifier)
         tableView.register(
-            NewsFeedCodeTableViewCell.self,
-            forCellReuseIdentifier: NewsFeedCodeTableViewCell.identifier
+            NewsFeedTableViewCell.self,
+            forCellReuseIdentifier: NewsFeedTableViewCell.identifier
         )
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .systemGray5
         view.backgroundColor = .white
     }
     
@@ -91,6 +88,20 @@ final class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
                 equalTo: view.bottomAnchor),
         ])
     }
+    
+    // MARK: - NewsFeedTableViewCellDelegate
+    func revealPost(for cell: NewsFeedTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let cellViewModel = feedViewModel.cells[indexPath.row]
+        interactor?.makeRequest(request: NewsFeed
+            .Model
+            .Request
+            .RequestType
+            .revealPostIds(postId: cellViewModel.postId))
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -102,19 +113,14 @@ extension NewsFeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(
-//            withIdentifier: NewsFeedTableViewCell.identifier,
-//            for: indexPath) as? NewsFeedTableViewCell else {
-//            return UITableViewCell()
-//        }
-        
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: NewsFeedCodeTableViewCell.identifier,
-            for: indexPath) as? NewsFeedCodeTableViewCell else {
+            withIdentifier: NewsFeedTableViewCell.identifier,
+            for: indexPath) as? NewsFeedTableViewCell else {
             return UITableViewCell()
         }
         let cellViewModel = feedViewModel.cells[indexPath.row]
         cell.set(viewModel: cellViewModel)
+        cell.delegate = self
         return cell
     }
 }
@@ -128,6 +134,14 @@ extension NewsFeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let cellViewModel = feedViewModel.cells[indexPath.row]
+        return cellViewModel.sizes.totalHeight
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        estimatedHeightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
         let cellViewModel = feedViewModel.cells[indexPath.row]
         return cellViewModel.sizes.totalHeight
     }

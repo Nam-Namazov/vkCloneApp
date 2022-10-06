@@ -49,7 +49,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelega
     
     func authServiceSignIn() {
         print(#function)
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = NewsFeedViewController()
     }
     
     func authServiceSignInDidFail() {

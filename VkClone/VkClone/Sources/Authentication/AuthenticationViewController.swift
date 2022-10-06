@@ -8,7 +8,6 @@
 import UIKit
 
 final class AuthenticationViewController: UIViewController {
-    
     private let loginVkWithBrowserButton: UIButton = {
         let button = UIButton()
         button.setTitle("Войти в VK", for: .normal)
@@ -33,9 +32,11 @@ final class AuthenticationViewController: UIViewController {
     }
     
     private func buttonTarget() {
-        loginVkWithBrowserButton.addTarget(self,
-                                           action: #selector(signInTouch),
-                                           for: .touchUpInside)
+        loginVkWithBrowserButton.addTarget(
+            self,
+            action: #selector(signInTouch),
+            for: .touchUpInside
+        )
     }
     
     @objc
@@ -57,7 +58,7 @@ final class AuthenticationViewController: UIViewController {
             loginVkWithBrowserButton.widthAnchor.constraint(
                 equalToConstant: 150),
             loginVkWithBrowserButton.heightAnchor.constraint(
-                equalToConstant: 40),
+                equalToConstant: 40)
         ])
     }
 }

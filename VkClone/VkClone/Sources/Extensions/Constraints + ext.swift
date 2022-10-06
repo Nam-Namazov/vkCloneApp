@@ -8,13 +8,14 @@
 import UIKit
 
 extension UIView {
-    
     func fillSuperview(padding: UIEdgeInsets) {
-        anchor(top: superview?.topAnchor,
-               leading: superview?.leadingAnchor,
-               bottom: superview?.bottomAnchor,
-               trailing: superview?.trailingAnchor,
-               padding: padding)
+        anchor(
+            top: superview?.topAnchor,
+            leading: superview?.leadingAnchor,
+            bottom: superview?.bottomAnchor,
+            trailing: superview?.trailingAnchor,
+            padding: padding
+        )
     }
     
     func fillSuperview() {
@@ -22,20 +23,22 @@ extension UIView {
     }
     
     func anchorSize(to view: UIView) {
-        widthAnchor.constraint(
-            equalTo: view.widthAnchor
-        ).isActive = true
-        heightAnchor.constraint(
-            equalTo: view.heightAnchor
-        ).isActive = true
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(
+                equalTo: view.widthAnchor),
+            heightAnchor.constraint(
+                equalTo: view.heightAnchor)
+        ])
     }
     
-    func anchor(top: NSLayoutYAxisAnchor?,
-                leading: NSLayoutXAxisAnchor?,
-                bottom: NSLayoutYAxisAnchor?,
-                trailing: NSLayoutXAxisAnchor?,
-                padding: UIEdgeInsets = .zero,
-                size: CGSize = .zero) {
+    func anchor(
+        top: NSLayoutYAxisAnchor?,
+        leading: NSLayoutXAxisAnchor?,
+        bottom: NSLayoutYAxisAnchor?,
+        trailing: NSLayoutXAxisAnchor?,
+        padding: UIEdgeInsets = .zero,
+        size: CGSize = .zero
+    ) {
         
         if let top = top {
             topAnchor.constraint(

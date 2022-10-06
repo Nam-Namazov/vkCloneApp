@@ -16,14 +16,13 @@
 		993C9F4D28BA679500C06DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993C9F4C28BA679500C06DBE /* Assets.xcassets */; };
 		993C9F5028BA679500C06DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 993C9F4E28BA679500C06DBE /* LaunchScreen.storyboard */; };
 		993C9F6428BA697E00C06DBE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F6328BA697E00C06DBE /* TabBarController.swift */; };
-		993C9F7228BA6A0100C06DBE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F7128BA6A0100C06DBE /* FeedViewController.swift */; };
 		993C9F7428BA6A1F00C06DBE /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F7328BA6A1F00C06DBE /* MessengerViewController.swift */; };
 		993C9F7628BA6A2600C06DBE /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F7528BA6A2600C06DBE /* VideosViewController.swift */; };
 		993C9F7828BA6A2E00C06DBE /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F7728BA6A2E00C06DBE /* FriendsViewController.swift */; };
 		993C9F7E28BA6BC500C06DBE /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F7D28BA6BC500C06DBE /* NotificationsViewController.swift */; };
 		993C9F8128BA6D9E00C06DBE /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F8028BA6D9E00C06DBE /* UIColor + ext.swift */; };
 		993C9F8728BA6E7100C06DBE /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C9F8628BA6E7100C06DBE /* AuthenticationViewController.swift */; };
-		9994293928EEB5C100F08906 /* NewsFeedCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994293828EEB5C100F08906 /* NewsFeedCodeTableViewCell.swift */; };
+		9994293928EEB5C100F08906 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994293828EEB5C100F08906 /* NewsFeedTableViewCell.swift */; };
 		9994293B28EEBB9F00F08906 /* Constraints + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994293A28EEBB9F00F08906 /* Constraints + ext.swift */; };
 		9994293D28EEC13700F08906 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994293C28EEC13700F08906 /* Constants.swift */; };
 		99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D128BA77B600057D94 /* AuthService.swift */; };
@@ -37,8 +36,6 @@
 		99FBE2E628BABBD500057D94 /* NewsFeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2DF28BABBD500057D94 /* NewsFeedModels.swift */; };
 		99FBE2E728BABBD500057D94 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2E028BABBD500057D94 /* NewsFeedViewController.swift */; };
 		99FBE2E828BABBD500057D94 /* NewsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2E128BABBD500057D94 /* NewsFeedInteractor.swift */; };
-		99FBE2F128BB4B7600057D94 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2F028BB4B7600057D94 /* NewsFeedTableViewCell.swift */; };
-		99FBE2F328BB4BAA00057D94 /* NewsFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FBE2F228BB4BAA00057D94 /* NewsFeedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,14 +52,13 @@
 		993C9F4F28BA679500C06DBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		993C9F5128BA679500C06DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		993C9F6328BA697E00C06DBE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		993C9F7128BA6A0100C06DBE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		993C9F7328BA6A1F00C06DBE /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		993C9F7528BA6A2600C06DBE /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		993C9F7728BA6A2E00C06DBE /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		993C9F7D28BA6BC500C06DBE /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		993C9F8028BA6D9E00C06DBE /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		993C9F8628BA6E7100C06DBE /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
-		9994293828EEB5C100F08906 /* NewsFeedCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeTableViewCell.swift; sourceTree = "<group>"; };
+		9994293828EEB5C100F08906 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
 		9994293A28EEBB9F00F08906 /* Constraints + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraints + ext.swift"; sourceTree = "<group>"; };
 		9994293C28EEC13700F08906 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		99FBE2D128BA77B600057D94 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -76,8 +72,6 @@
 		99FBE2DF28BABBD500057D94 /* NewsFeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedModels.swift; sourceTree = "<group>"; };
 		99FBE2E028BABBD500057D94 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		99FBE2E128BABBD500057D94 /* NewsFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedInteractor.swift; sourceTree = "<group>"; };
-		99FBE2F028BB4B7600057D94 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
-		99FBE2F228BB4BAA00057D94 /* NewsFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFeedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,16 +191,6 @@
 			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
-		993C9F5E28BA68AE00C06DBE /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-				993C9F7028BA69F100C06DBE /* Model */,
-				993C9F6F28BA69EE00C06DBE /* View */,
-				993C9F6E28BA69EB00C06DBE /* Controller */,
-			);
-			path = Feed;
-			sourceTree = "<group>";
-		};
 		993C9F5F28BA68B300C06DBE /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,28 +287,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		993C9F6E28BA69EB00C06DBE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				993C9F7128BA6A0100C06DBE /* FeedViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		993C9F6F28BA69EE00C06DBE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		993C9F7028BA69F100C06DBE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		993C9F7928BA6B9900C06DBE /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,7 +354,6 @@
 		99FBE2EA28BABC1F00057D94 /* Later */ = {
 			isa = PBXGroup;
 			children = (
-				993C9F5E28BA68AE00C06DBE /* Feed */,
 				993C9F6128BA693E00C06DBE /* Videos */,
 				993C9F5F28BA68B300C06DBE /* Messenger */,
 				993C9F7928BA6B9900C06DBE /* Notifications */,
@@ -404,10 +365,8 @@
 		99FBE2EF28BB4B6100057D94 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				99FBE2F028BB4B7600057D94 /* NewsFeedTableViewCell.swift */,
-				99FBE2F228BB4BAA00057D94 /* NewsFeedTableViewCell.xib */,
 				991EDA0828EDF37600B2A903 /* NewsFeedCellLayoutCalculator.swift */,
-				9994293828EEB5C100F08906 /* NewsFeedCodeTableViewCell.swift */,
+				9994293828EEB5C100F08906 /* NewsFeedTableViewCell.swift */,
 				9994293C28EEC13700F08906 /* Constants.swift */,
 			);
 			path = Cell;
@@ -484,7 +443,6 @@
 			files = (
 				993C9F5028BA679500C06DBE /* LaunchScreen.storyboard in Resources */,
 				993C9F4D28BA679500C06DBE /* Assets.xcassets in Resources */,
-				99FBE2F328BB4BAA00057D94 /* NewsFeedTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,9 +498,8 @@
 				99FBE2E628BABBD500057D94 /* NewsFeedModels.swift in Sources */,
 				993C9F7628BA6A2600C06DBE /* VideosViewController.swift in Sources */,
 				99FBE2E428BABBD500057D94 /* NewsFeedWorker.swift in Sources */,
-				9994293928EEB5C100F08906 /* NewsFeedCodeTableViewCell.swift in Sources */,
+				9994293928EEB5C100F08906 /* NewsFeedTableViewCell.swift in Sources */,
 				993C9F6428BA697E00C06DBE /* TabBarController.swift in Sources */,
-				99FBE2F128BB4B7600057D94 /* NewsFeedTableViewCell.swift in Sources */,
 				993C9F8728BA6E7100C06DBE /* AuthenticationViewController.swift in Sources */,
 				993C9F4428BA679500C06DBE /* AppDelegate.swift in Sources */,
 				993C9F4628BA679500C06DBE /* SceneDelegate.swift in Sources */,
@@ -550,7 +507,6 @@
 				99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */,
 				9994293D28EEC13700F08906 /* Constants.swift in Sources */,
 				993C9F7828BA6A2E00C06DBE /* FriendsViewController.swift in Sources */,
-				993C9F7228BA6A0100C06DBE /* FeedViewController.swift in Sources */,
 				99FBE2E528BABBD500057D94 /* NewsFeedRouter.swift in Sources */,
 				99FBE2D828BAB1C000057D94 /* FeedResponse.swift in Sources */,
 				99FBE2DA28BAB3EE00057D94 /* NetworkDataFetcher.swift in Sources */,
