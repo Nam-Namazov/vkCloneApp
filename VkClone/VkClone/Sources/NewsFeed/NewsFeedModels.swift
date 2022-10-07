@@ -42,6 +42,7 @@ enum NewsFeed {
                 case getNewsFeed
                 case getUser
                 case revealPostIds(postId: Int)
+                case getNextBatch
             }
         }
         
