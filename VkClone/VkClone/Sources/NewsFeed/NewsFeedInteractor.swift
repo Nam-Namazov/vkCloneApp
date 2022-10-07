@@ -60,6 +60,7 @@ final class NewsFeedInteractor: NewsFeedBusinessLogic {
             })
             
         case .getNextBatch:
+            self.presenter?.presentData(response: NewsFeed.Model.Response.ResponseType.presentFooterLoader)
             service?.getNextBatch(completion: { revealedPostIds, feed in
                 self.presenter?.presentData(
                     response: NewsFeed
