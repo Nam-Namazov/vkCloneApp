@@ -75,6 +75,13 @@ final class NewsFeedViewController: UIViewController,
         }
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
+                                  willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height / 1.1 {
+            interactor?.makeRequest(request: NewsFeed.Model.Request.RequestType.getNextBatch)
+        }
+    }
+    
     private func setupTopBars() {
         self.navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
