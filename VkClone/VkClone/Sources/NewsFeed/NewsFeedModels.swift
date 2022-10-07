@@ -17,7 +17,7 @@ protocol FeedCellViewModel {
     var comments: String? { get }
     var shares: String? { get }
     var views: String? { get }
-    var photoAttachement: FeedCellPhotoAttachementViewModel? { get }
+    var photoAttachements: [FeedCellPhotoAttachementViewModel] { get }
     var sizes: FeedCellSizes { get }
 }
 
@@ -59,7 +59,6 @@ enum NewsFeed {
 }
 
 struct FeedViewModel {
-    
     struct Cell: FeedCellViewModel {
         var postId: Int
         var iconUrlString: String
@@ -70,7 +69,7 @@ struct FeedViewModel {
         var comments: String?
         var shares: String?
         var views: String?
-        var photoAttachement: FeedCellPhotoAttachementViewModel?
+        var photoAttachements: [FeedCellPhotoAttachementViewModel]
         var sizes: FeedCellSizes
     }
     

@@ -17,22 +17,22 @@ struct Sizes: FeedCellSizes {
 
 protocol FeedCellLayoutCalculatorProtocol {
     func sizes(postText: String?,
-               photoAttachment: FeedCellPhotoAttachementViewModel?,
+               photoAttachments: [FeedCellPhotoAttachementViewModel],
                isFullSizedPost: Bool) -> FeedCellSizes
 }
 
 final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
     private let screenWidth: CGFloat
     
-    init(screenWidth: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)) {
+    init(screenWidth: CGFloat = min(UIScreen.main.bounds.width,
+                                    UIScreen.main.bounds.height)) {
         self.screenWidth = screenWidth
     }
     
     func sizes(postText: String?,
-               photoAttachment: FeedCellPhotoAttachementViewModel?,
+               photoAttachments: [FeedCellPhotoAttachementViewModel],
                isFullSizedPost: Bool) -> FeedCellSizes {
         var showMoreTextButton = false
-        
         let cardViewWidth = screenWidth - Constants.cardInsets.left - Constants.cardInsets.right
         
         // MARK: Работа с postLabelFrame
@@ -82,14 +82,25 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
             size: CGSize.zero
         )
         
-        if let attachment = photoAttachment {
+        if let attachment = photoAttachments.first {
             let photoHeight: Float = Float(attachment.height)
             let photoWidth: Float = Float(attachment.width)
             let ratio = CGFloat(photoHeight / photoWidth)
-            attachmentFrame.size = CGSize(
-                width: cardViewWidth,
-                height: cardViewWidth * ratio
-            )
+            if photoAttachments.count == 1 {
+                attachmentFrame.size = CGSize(width: cardViewWidth,
+                                              height: cardViewWidth * ratio)
+            } else if photoAttachments.count > 1 {
+                var photos = [CGSize]()
+                for photo in photoAttachments {
+                    let photoSize = CGSize(width: CGFloat(photo.width),
+                                           height: CGFloat(photo.height))
+                    photos.append(photoSize)
+                }
+                let rowHeight = RowLayout.rowHeightCounter(superviewWidth: cardViewWidth,
+                                                           photosArray: photos)
+                attachmentFrame.size = CGSize(width: cardViewWidth,
+                                              height: rowHeight!)
+            }
         }
         
         // MARK: Работа с bottomViewFrame
