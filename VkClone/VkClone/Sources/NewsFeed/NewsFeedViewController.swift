@@ -20,6 +20,7 @@ final class NewsFeedViewController: UIViewController,
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
     private let tableView = UITableView()
     private var feedViewModel = FeedViewModel.init(cells: [])
+    private var titleView = TitleView()
     
     // MARK: Setup
     private func setup() {
@@ -45,8 +46,12 @@ final class NewsFeedViewController: UIViewController,
         layout()
         style()
         configreTableView()
+        setupTopBars()
         interactor?.makeRequest(
             request: NewsFeed.Model.Request.RequestType.getNewsFeed
+        )
+        interactor?.makeRequest(
+            request: NewsFeed.Model.Request.RequestType.getUser
         )
     }
     
@@ -55,7 +60,16 @@ final class NewsFeedViewController: UIViewController,
         case .displayNewsFeed(feedViewModel: let feedViewModel):
             self.feedViewModel = feedViewModel
             tableView.reloadData()
+            
+        case .displayUser(userViewModel: let userViewModel):
+            titleView.set(userViewModel: userViewModel)
         }
+    }
+    
+    private func setupTopBars() {
+        self.navigationController?.hidesBarsOnSwipe = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.titleView = titleView
     }
     
     private func configreTableView() {
@@ -79,7 +93,8 @@ final class NewsFeedViewController: UIViewController,
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(
-                equalTo: view.safeAreaLayoutGuide.topAnchor),
+                equalTo: view.safeAreaLayoutGuide.topAnchor,
+                constant: 5),
             tableView.leadingAnchor.constraint(
                 equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(

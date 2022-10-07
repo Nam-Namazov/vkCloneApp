@@ -25,6 +25,7 @@ final class NewsFeedPresenter: NewsFeedPresentationLogic {
     
     func presentData(response: NewsFeed.Model.Response.ResponseType) {
         switch response {
+            
         case .presentNewsFeed(let feed,
                               let revealdedPostIds):
             let cells = feed.items.map { (feedItem) in
@@ -41,6 +42,10 @@ final class NewsFeedPresenter: NewsFeedPresentationLogic {
                     .ViewModelData
                     .displayNewsFeed(feedViewModel: feedViewModel)
             )
+            
+        case .presentUserInfo(user: let user):
+            let userViewModel = UserViewModel.init(photoUrlString: user?.photo100)
+            viewController?.displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData.displayUser(userViewModel: userViewModel))
         }
     }
     

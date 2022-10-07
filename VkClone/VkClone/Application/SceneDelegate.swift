@@ -49,7 +49,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate, AuthServiceDelega
     
     func authServiceSignIn() {
         print(#function)
-        window?.rootViewController = NewsFeedViewController()
+        let controller = NewsFeedViewController()
+        let navController = UINavigationController(rootViewController: controller)
+        window?.rootViewController = navController
     }
     
     func authServiceSignInDidFail() {
