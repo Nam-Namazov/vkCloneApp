@@ -21,6 +21,15 @@ final class NewsFeedViewController: UIViewController,
     private let tableView = UITableView()
     private var feedViewModel = FeedViewModel.init(cells: [])
     private var titleView = TitleView()
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(
+            self,
+            action: #selector(refresh),
+            for: .valueChanged
+        )
+        return refreshControl
+    }()
     
     // MARK: Setup
     private func setup() {
@@ -60,7 +69,7 @@ final class NewsFeedViewController: UIViewController,
         case .displayNewsFeed(feedViewModel: let feedViewModel):
             self.feedViewModel = feedViewModel
             tableView.reloadData()
-            
+            refreshControl.endRefreshing()
         case .displayUser(userViewModel: let userViewModel):
             titleView.set(userViewModel: userViewModel)
         }
@@ -82,10 +91,20 @@ final class NewsFeedViewController: UIViewController,
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemGray5
         view.backgroundColor = .white
+        let topInset: CGFloat = 8
+        tableView.contentInset.top = topInset
+        tableView.addSubview(refreshControl)
     }
     
     private func style() {
         view.backgroundColor = .white
+    }
+    
+    @objc
+    private func refresh() {
+        interactor?.makeRequest(
+            request: NewsFeed.Model.Request.RequestType.getNewsFeed
+        )
     }
     
     private func layout() {
