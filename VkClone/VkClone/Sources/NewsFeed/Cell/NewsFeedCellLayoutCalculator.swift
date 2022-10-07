@@ -24,7 +24,8 @@ protocol FeedCellLayoutCalculatorProtocol {
 final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
     private let screenWidth: CGFloat
     
-    init(screenWidth: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)) {
+    init(screenWidth: CGFloat = min(UIScreen.main.bounds.width,
+                                    UIScreen.main.bounds.height)) {
         self.screenWidth = screenWidth
     }
     
@@ -32,7 +33,6 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
                photoAttachments: [FeedCellPhotoAttachementViewModel],
                isFullSizedPost: Bool) -> FeedCellSizes {
         var showMoreTextButton = false
-        
         let cardViewWidth = screenWidth - Constants.cardInsets.left - Constants.cardInsets.right
         
         // MARK: Работа с postLabelFrame
@@ -87,9 +87,19 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
             let photoWidth: Float = Float(attachment.width)
             let ratio = CGFloat(photoHeight / photoWidth)
             if photoAttachments.count == 1 {
-                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+                attachmentFrame.size = CGSize(width: cardViewWidth,
+                                              height: cardViewWidth * ratio)
             } else if photoAttachments.count > 1 {
-                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+                var photos = [CGSize]()
+                for photo in photoAttachments {
+                    let photoSize = CGSize(width: CGFloat(photo.width),
+                                           height: CGFloat(photo.height))
+                    photos.append(photoSize)
+                }
+                let rowHeight = RowLayout.rowHeightCounter(superviewWidth: cardViewWidth,
+                                                           photosArray: photos)
+                attachmentFrame.size = CGSize(width: cardViewWidth,
+                                              height: rowHeight!)
             }
         }
         
