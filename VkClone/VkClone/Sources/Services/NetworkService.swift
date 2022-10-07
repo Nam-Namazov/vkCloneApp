@@ -15,7 +15,6 @@ protocol Networking {
 }
 
 final class NetworkService: Networking {
-    
     private let authService: AuthService
     
     init(authService: AuthService = SceneDelegate.shared().authService) {
@@ -56,7 +55,6 @@ final class NetworkService: Networking {
         params: [String: String]
     ) -> URL {
         var components = URLComponents()
-        
         components.scheme = API.scheme
         components.host = API.host
         components.path = path

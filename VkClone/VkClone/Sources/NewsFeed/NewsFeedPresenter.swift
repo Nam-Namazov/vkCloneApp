@@ -152,9 +152,11 @@ final class NewsFeedPresenter: NewsFeedPresentationLogic {
         
         return attachments.compactMap { attachment -> FeedViewModel.FeedCellPhotoAttachment? in
             guard let photo = attachment.photo else { return nil }
-            return FeedViewModel.FeedCellPhotoAttachment.init(photoUrlString: photo.srcBIG,
-                                                              width: photo.width,
-                                                              height: photo.height)
+            return FeedViewModel.FeedCellPhotoAttachment.init(
+                photoUrlString: photo.srcBIG,
+                width: photo.width,
+                height: photo.height
+            )
         }
     }
 }

@@ -23,14 +23,28 @@ final class TitleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
-        addSubview(myTextField)
-        addSubview(myAvatarView)
+        configureView()
         makeConstraints()
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        return UIView.layoutFittingExpandedSize
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        myAvatarView.layer.masksToBounds = true
+        myAvatarView.layer.cornerRadius = myAvatarView.frame.width / 2
     }
     
     func set(userViewModel: TitleViewViewModel) {
         myAvatarView.set(imageURL: userViewModel.photoUrlString)
+    }
+    
+    private func configureView() {
+        translatesAutoresizingMaskIntoConstraints = false
+        addSubview(myTextField)
+        addSubview(myAvatarView)
     }
     
     private func makeConstraints() {
@@ -62,17 +76,7 @@ final class TitleView: UIView {
                                                       bottom: 4,
                                                       right: 12))
     }
-    
-    override var intrinsicContentSize: CGSize {
-        return UIView.layoutFittingExpandedSize
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        myAvatarView.layer.masksToBounds = true
-        myAvatarView.layer.cornerRadius = myAvatarView.frame.width / 2
-    }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

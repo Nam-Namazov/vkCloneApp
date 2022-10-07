@@ -22,7 +22,6 @@ final class RowLayout: UICollectionViewLayout {
     fileprivate var cellPadding: CGFloat = 8
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     fileprivate var contentWidth: CGFloat = 0
-    
     fileprivate var contentHeight: CGFloat {
         guard let collectionView = collectionView else {
             return 0
@@ -38,7 +37,8 @@ final class RowLayout: UICollectionViewLayout {
     override func prepare() {
         contentWidth = 0
         cache = []
-        guard cache.isEmpty == true, let collectionView = collectionView else {
+        guard cache.isEmpty == true,
+              let collectionView = collectionView else {
             return
         }
         var photos = [CGSize]()

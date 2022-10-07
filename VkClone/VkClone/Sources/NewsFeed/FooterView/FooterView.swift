@@ -50,9 +50,13 @@ final class FooterView: UIView {
                                              left: 20,
                                              bottom: 777,
                                              right: 20))
-        
-        loader.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        loader.topAnchor.constraint(equalTo: myLabel.bottomAnchor, constant: 8).isActive = true
+        NSLayoutConstraint.activate([
+            loader.centerXAnchor.constraint(
+                equalTo: centerXAnchor),
+            loader.topAnchor.constraint(
+                equalTo: myLabel.bottomAnchor,
+                constant: 8)
+        ])
     }
     
     required init?(coder: NSCoder) {
