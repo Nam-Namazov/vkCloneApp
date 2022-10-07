@@ -19,8 +19,9 @@ final class NewsFeedViewController: UIViewController,
     var interactor: NewsFeedBusinessLogic?
     var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
     private let tableView = UITableView()
-    private var feedViewModel = FeedViewModel.init(cells: [])
+    private var feedViewModel = FeedViewModel.init(cells: [], footerTitle: nil)
     private var titleView = TitleView()
+    private lazy var footerView = FooterView()
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(
@@ -68,10 +69,13 @@ final class NewsFeedViewController: UIViewController,
         switch viewModel {
         case .displayNewsFeed(feedViewModel: let feedViewModel):
             self.feedViewModel = feedViewModel
+            footerView.setTitle(feedViewModel.footerTitle)
             tableView.reloadData()
             refreshControl.endRefreshing()
         case .displayUser(userViewModel: let userViewModel):
             titleView.set(userViewModel: userViewModel)
+        case .displayFooterLoader:
+            footerView.showLoader()
         }
     }
     
@@ -101,6 +105,7 @@ final class NewsFeedViewController: UIViewController,
         let topInset: CGFloat = 8
         tableView.contentInset.top = topInset
         tableView.addSubview(refreshControl)
+        tableView.tableFooterView = footerView
     }
     
     private func style() {

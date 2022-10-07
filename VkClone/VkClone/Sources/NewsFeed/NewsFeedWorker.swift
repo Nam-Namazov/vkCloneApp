@@ -9,9 +9,9 @@
 import UIKit
 
 final class NewsFeedService {
-    var authService: AuthService
-    var networking: Networking
-    var fetcher: DataFetcher
+    private var authService: AuthService
+    private var networking: Networking
+    private var fetcher: DataFetcher
     
     private var revealedPostIds = [Int]()
     private var feedResponse: FeedResponse?

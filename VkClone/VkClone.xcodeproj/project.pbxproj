@@ -31,6 +31,8 @@
 		9994295A28F05FA200F08906 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994295928F05FA200F08906 /* TitleView.swift */; };
 		9994295C28F0600900F08906 /* InsetableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994295B28F0600900F08906 /* InsetableTextField.swift */; };
 		9994295E28F064AB00F08906 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994295D28F064AB00F08906 /* UserResponse.swift */; };
+		9994296128F0911600F08906 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9994296028F0911600F08906 /* FooterView.swift */; };
+		9994296328F0955800F08906 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 9994296228F0955800F08906 /* Localizable.stringsdict */; };
 		99FBE2D228BA77B600057D94 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D128BA77B600057D94 /* AuthService.swift */; };
 		99FBE2D428BA9C9D00057D94 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D328BA9C9D00057D94 /* NetworkService.swift */; };
 		99FBE2D628BA9D7400057D94 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBE2D528BA9D7400057D94 /* API.swift */; };
@@ -73,6 +75,8 @@
 		9994295928F05FA200F08906 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		9994295B28F0600900F08906 /* InsetableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetableTextField.swift; sourceTree = "<group>"; };
 		9994295D28F064AB00F08906 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		9994296028F0911600F08906 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		9994296228F0955800F08906 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		99FBE2D128BA77B600057D94 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		99FBE2D328BA9C9D00057D94 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		99FBE2D528BA9D7400057D94 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				993C9F4C28BA679500C06DBE /* Assets.xcassets */,
 				993C9F4E28BA679500C06DBE /* LaunchScreen.storyboard */,
 				993C9F5128BA679500C06DBE /* Info.plist */,
+				9994296228F0955800F08906 /* Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -369,9 +374,18 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		9994295F28F0910A00F08906 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				9994296028F0911600F08906 /* FooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		99FBE2DB28BABBB100057D94 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				9994295F28F0910A00F08906 /* FooterView */,
 				9994295828F05F8D00F08906 /* TitleView */,
 				9994295128F0299100F08906 /* GalleryView */,
 				99FBE2EF28BB4B6100057D94 /* Cell */,
@@ -477,6 +491,7 @@
 			files = (
 				993C9F5028BA679500C06DBE /* LaunchScreen.storyboard in Resources */,
 				993C9F4D28BA679500C06DBE /* Assets.xcassets in Resources */,
+				9994296328F0955800F08906 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +550,7 @@
 				9994293928EEB5C100F08906 /* NewsFeedTableViewCell.swift in Sources */,
 				993C9F6428BA697E00C06DBE /* TabBarController.swift in Sources */,
 				9994295528F02B1400F08906 /* GalleryCollectionViewCell.swift in Sources */,
+				9994296128F0911600F08906 /* FooterView.swift in Sources */,
 				993C9F8728BA6E7100C06DBE /* AuthenticationViewController.swift in Sources */,
 				993C9F4428BA679500C06DBE /* AppDelegate.swift in Sources */,
 				993C9F4628BA679500C06DBE /* SceneDelegate.swift in Sources */,
