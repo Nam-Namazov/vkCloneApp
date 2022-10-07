@@ -280,7 +280,9 @@ final class NewsFeedTableViewCell: UITableViewCell {
                           label: viewsLabel)
     }
     
-    private func helpInFourthLayer(view: UIView, imageView: UIImageView, label: UILabel) {
+    private func helpInFourthLayer(view: UIView,
+                                   imageView: UIImageView,
+                                   label: UILabel) {
         NSLayoutConstraint.activate([
             // imageView constraints
             imageView.centerYAnchor.constraint(
