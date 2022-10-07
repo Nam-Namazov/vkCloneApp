@@ -33,7 +33,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
         return view
     }()
     
-    private let postLabel: UITextView = {
+    private let postTextView: UITextView = {
         let textView = UITextView()
         textView.isScrollEnabled = false
         textView.isSelectable = true
@@ -212,12 +212,12 @@ final class NewsFeedTableViewCell: UITableViewCell {
         iconImageView.set(imageURL: viewModel.iconUrlString)
         nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
-        postLabel.text = viewModel.text
+        postTextView.text = viewModel.text
         likesLabel.text = viewModel.likes
         commentsLabel.text = viewModel.comments
         sharesLabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
-        postLabel.frame = viewModel.sizes.postLabelFrame
+        postTextView.frame = viewModel.sizes.postLabelFrame
         
         bottomView.frame = viewModel.sizes.bottomViewFrame
         moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
@@ -409,7 +409,7 @@ final class NewsFeedTableViewCell: UITableViewCell {
     
     private func overlaySecondLayer() {
         cardView.addSubview(topView)
-        cardView.addSubview(postLabel)
+        cardView.addSubview(postTextView)
         cardView.addSubview(moreTextButton)
         cardView.addSubview(postImageView)
         cardView.addSubview(galleryCollectionView)
