@@ -17,7 +17,7 @@ struct Sizes: FeedCellSizes {
 
 protocol FeedCellLayoutCalculatorProtocol {
     func sizes(postText: String?,
-               photoAttachment: FeedCellPhotoAttachementViewModel?,
+               photoAttachments: [FeedCellPhotoAttachementViewModel],
                isFullSizedPost: Bool) -> FeedCellSizes
 }
 
@@ -29,7 +29,7 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
     }
     
     func sizes(postText: String?,
-               photoAttachment: FeedCellPhotoAttachementViewModel?,
+               photoAttachments: [FeedCellPhotoAttachementViewModel],
                isFullSizedPost: Bool) -> FeedCellSizes {
         var showMoreTextButton = false
         
@@ -82,14 +82,15 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
             size: CGSize.zero
         )
         
-        if let attachment = photoAttachment {
+        if let attachment = photoAttachments.first {
             let photoHeight: Float = Float(attachment.height)
             let photoWidth: Float = Float(attachment.width)
             let ratio = CGFloat(photoHeight / photoWidth)
-            attachmentFrame.size = CGSize(
-                width: cardViewWidth,
-                height: cardViewWidth * ratio
-            )
+            if photoAttachments.count == 1 {
+                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            } else if photoAttachments.count > 1 {
+                attachmentFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
+            }
         }
         
         // MARK: Работа с bottomViewFrame
