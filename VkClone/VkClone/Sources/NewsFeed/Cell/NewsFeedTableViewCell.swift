@@ -17,7 +17,6 @@ final class NewsFeedTableViewCell: UITableViewCell {
     weak var delegate: NewsFeedTableViewCellDelegate?
     
     // Первый слой
-    
     private let cardView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
@@ -26,7 +25,6 @@ final class NewsFeedTableViewCell: UITableViewCell {
     }()
     
     // Второй слой
-    
     private let topView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +74,6 @@ final class NewsFeedTableViewCell: UITableViewCell {
     }()
     
     // Третий слой на topView
-    
     private let iconImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +98,6 @@ final class NewsFeedTableViewCell: UITableViewCell {
     }()
     
     // Третий слой на bottomView
-    
     private let likesView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +123,6 @@ final class NewsFeedTableViewCell: UITableViewCell {
     }()
     
     // Четвертый слой на bottomView
-    
     private let likesImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false

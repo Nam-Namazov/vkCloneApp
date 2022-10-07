@@ -21,7 +21,6 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     override init() {
         vkSDK = VKSdk.initialize(withAppId: appId)
         super.init()
-        print("VKSdk.initialize")
         vkSDK.register(self)
         vkSDK.uiDelegate = self
     }
@@ -43,9 +42,7 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
             switch state {
             case .initialized:
                 VKSdk.authorize(scope)
-                print("initialized")
             case .authorized:
-                print("authorized")
                 delegate.authServiceSignIn()
             default:
                 delegate.authServiceSignInDidFail()
@@ -54,19 +51,16 @@ final class AuthService: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-        print(#function)
         if result.token != nil {
             delegate?.authServiceSignIn()
         }
     }
     
     func vkSdkUserAuthorizationFailed() {
-        print(#function)
         delegate?.authServiceSignInDidFail()
     }
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {
-        print(#function)
         delegate?.authServiceShouldShow(viewController: controller)
     }
     

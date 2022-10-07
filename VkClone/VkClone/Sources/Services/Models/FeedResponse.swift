@@ -86,8 +86,13 @@ struct Profile: Decodable, ProfileRepresentable {
     let lastName: String
     let photo100: String
     
-    var name: String { return firstName + " " + lastName }
-    var photo: String { return photo100 }
+    var name: String {
+        return firstName + " " + lastName
+    }
+    
+    var photo: String {
+        return photo100
+    }
 }
 
 struct Group: Decodable, ProfileRepresentable {
@@ -95,5 +100,7 @@ struct Group: Decodable, ProfileRepresentable {
     let name: String
     let photo100: String
     
-    var photo: String { return photo100 }
+    var photo: String {
+        return photo100
+    }
 }

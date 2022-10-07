@@ -21,6 +21,13 @@ final class AuthenticationViewController: UIViewController {
         return button
     }()
     
+    private let vkLogoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "vk logo")
+        return imageView
+    }()
+    
     private var authService: AuthService!
     
     override func viewDidLoad() {
@@ -50,6 +57,8 @@ final class AuthenticationViewController: UIViewController {
     
     private func layout() {
         view.addSubview(loginVkWithBrowserButton)
+        view.addSubview(vkLogoImageView)
+        
         NSLayoutConstraint.activate([
             loginVkWithBrowserButton.centerXAnchor.constraint(
                 equalTo: view.centerXAnchor),
@@ -58,7 +67,17 @@ final class AuthenticationViewController: UIViewController {
             loginVkWithBrowserButton.widthAnchor.constraint(
                 equalToConstant: 150),
             loginVkWithBrowserButton.heightAnchor.constraint(
-                equalToConstant: 40)
+                equalToConstant: 40),
+            
+            vkLogoImageView.topAnchor.constraint(
+                equalTo: view.topAnchor,
+                constant: 200),
+            vkLogoImageView.centerXAnchor.constraint(
+                equalTo: view.centerXAnchor),
+            vkLogoImageView.widthAnchor.constraint(
+                equalToConstant: 150),
+            vkLogoImageView.heightAnchor.constraint(
+                equalToConstant: 150)
         ])
     }
 }

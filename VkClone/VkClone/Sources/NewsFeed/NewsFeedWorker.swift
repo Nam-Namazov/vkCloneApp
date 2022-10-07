@@ -12,7 +12,6 @@ final class NewsFeedService {
     private var authService: AuthService
     private var networking: Networking
     private var fetcher: DataFetcher
-    
     private var revealedPostIds = [Int]()
     private var feedResponse: FeedResponse?
     private var newFromInProcess: String?
@@ -95,7 +94,6 @@ final class NewsFeedService {
             guard let feedResponse = self.feedResponse else {
                 return
             }
-
             completion(self.revealedPostIds, feedResponse)
         }
     }

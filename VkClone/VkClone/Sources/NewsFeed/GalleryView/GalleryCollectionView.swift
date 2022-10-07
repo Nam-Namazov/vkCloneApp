@@ -49,8 +49,10 @@ extension GalleryCollectionView: UICollectionViewDataSource {
         return photos.count
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = dequeueReusableCell(
             withReuseIdentifier: GalleryCollectionViewCell.identifier,
             for: indexPath) as? GalleryCollectionViewCell else {
