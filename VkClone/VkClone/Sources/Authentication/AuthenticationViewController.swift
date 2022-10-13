@@ -12,19 +12,25 @@ final class AuthenticationViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Войти в VK", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = .zero
         button.layer.cornerRadius = 15
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        button.backgroundColor = .gray
+        button.layer.shadowRadius = 1
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .vkBlue
         return button
     }()
     
     private let vkLogoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "vk logo")
+        imageView.layer.shadowOpacity = 0.5
+        imageView.layer.cornerRadius = 25
+        imageView.layer.shadowOffset = .zero
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -52,7 +58,7 @@ final class AuthenticationViewController: UIViewController {
     }
     
     private func style() {
-        view.backgroundColor = .vkBlue
+        view.backgroundColor = .white
     }
     
     private func layout() {
@@ -62,16 +68,17 @@ final class AuthenticationViewController: UIViewController {
         NSLayoutConstraint.activate([
             loginVkWithBrowserButton.centerXAnchor.constraint(
                 equalTo: view.centerXAnchor),
-            loginVkWithBrowserButton.centerYAnchor.constraint(
-                equalTo: view.centerYAnchor),
+            loginVkWithBrowserButton.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: -300),
             loginVkWithBrowserButton.widthAnchor.constraint(
                 equalToConstant: 150),
             loginVkWithBrowserButton.heightAnchor.constraint(
-                equalToConstant: 40),
+                equalToConstant: 60),
             
-            vkLogoImageView.topAnchor.constraint(
-                equalTo: view.topAnchor,
-                constant: 200),
+            vkLogoImageView.bottomAnchor.constraint(
+                equalTo: loginVkWithBrowserButton.topAnchor,
+                constant: -50),
             vkLogoImageView.centerXAnchor.constraint(
                 equalTo: view.centerXAnchor),
             vkLogoImageView.widthAnchor.constraint(

@@ -18,7 +18,7 @@ extension UIColor {
                        alpha: 1)
     }
     
-    static let vkBlue = UIColor.rgb(red: 83,
-                                    green: 115,
-                                    blue: 163)
+    static let vkBlue = UIColor.rgb(red: 92,
+                                    green: 128,
+                                    blue: 180)
 }
