@@ -66,19 +66,21 @@ final class AuthenticationViewController: UIViewController {
         view.addSubview(vkLogoImageView)
         
         NSLayoutConstraint.activate([
-            loginVkWithBrowserButton.centerXAnchor.constraint(
-                equalTo: view.centerXAnchor),
             loginVkWithBrowserButton.bottomAnchor.constraint(
                 equalTo: view.bottomAnchor,
-                constant: -300),
-            loginVkWithBrowserButton.widthAnchor.constraint(
-                equalToConstant: 150),
+                constant: -88),
+            loginVkWithBrowserButton.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: 32),
+            loginVkWithBrowserButton.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: -32),
             loginVkWithBrowserButton.heightAnchor.constraint(
-                equalToConstant: 60),
+                equalToConstant: 64),
             
-            vkLogoImageView.bottomAnchor.constraint(
-                equalTo: loginVkWithBrowserButton.topAnchor,
-                constant: -50),
+            vkLogoImageView.topAnchor.constraint(
+                equalTo: view.topAnchor,
+                constant: 100),
             vkLogoImageView.centerXAnchor.constraint(
                 equalTo: view.centerXAnchor),
             vkLogoImageView.widthAnchor.constraint(
