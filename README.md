@@ -6,6 +6,6 @@ VK Clone App using vk sdk, that implement newsfeed posts with:
 - Load new posts
 - Collection view with custom layout
 
-![vk2](https://user-images.githubusercontent.com/84244347/194626140-c725d00a-3c9a-4a50-b04d-0146f52c9a8a.jpg)
+![vk2](https://github.com/Nam-Namazov/media1/blob/main/%D0%B2%D0%BA%20%D0%B2%D1%81%D0%B5.png)
 
 <img src="https://github.com/Nam-Namazov/media1/blob/main/gif1.gif" width="250" height="550" /> <img src="https://github.com/Nam-Namazov/media1/blob/main/gif2.gif" width="250" height="550" /> <img src="https://github.com/Nam-Namazov/media1/blob/main/gif3.gif" width="250" height="550" /> <img src="https://github.com/Nam-Namazov/media1/blob/main/gif4.gif" width="250" height="550" /> <img src="https://github.com/Nam-Namazov/media1/blob/main/gif5.gif" width="250" height="550" />
